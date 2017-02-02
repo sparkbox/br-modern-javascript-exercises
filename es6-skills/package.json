@@ -1,0 +1,14 @@
+{
+  "name": "es6-skills",
+  "version": "1.0.0",
+  "description": "1. `npm install -g babel` 2. `npm install`",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-latest": "^6.22.0"
+  }
+}
