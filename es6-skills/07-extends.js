@@ -1,11 +1,18 @@
-class Developer extends Person {
-  constructor(firstname, lastname, preferredLanguage) {
-    super(firstname, lastname);
-    this.preferredLanguage = preferredLanguage;
-  }
+/* Use ES6 class `extends` syntax to construct a Developer class with 
+ * preferred language. Use `super` to initialize the firstname and lastname.
+ * */
+
+function Person(firstname, lastname) {
+  this.fname = firstname;
+  this.lname = lastname;
 }
 
-let jen = new Person('Jen', 'Maker', 'Javascript');
+function Developer(firstname, lastname, preferredLanguage) {
+  Person.call(this, firstname, lastname);
+  this.preferredLanguage = preferredLanguage;
+}
+
+let jen = new Developer('Jen', 'Maker', 'Javascript');
 
 console.log(jen.fname); // 'Jen'
 console.log(jen.preferredLanguage); // 'Javascript'

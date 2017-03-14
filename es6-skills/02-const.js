@@ -1,7 +1,11 @@
-const MY_FAV_X = 1;
+/* Use `const` so `x` can't change
+ * 
+ * Consider renaming to const convention
+ * */
+var x = 1; 
 
 if( true ) {
-  let x = 2;
+  var x = 2; // should raise a TypeError
 }
 
-console.log(MY_FAV_X); // 1
+console.log(x); // 1

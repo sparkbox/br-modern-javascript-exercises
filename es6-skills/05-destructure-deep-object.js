@@ -1,4 +1,6 @@
-let { social: { twitter } } = {
+/* Use object destructuring to capture the twitter link of the profile object
+ * */
+let profile = {
   fname: 'Ryan',
   lname: 'Cromwell',
   social: {
@@ -6,5 +8,7 @@ let { social: { twitter } } = {
     instagram: "https://www.facebook.com/seesparkbox"
   }
 }
+
+var twitter = profile.social.twitter;
 
 console.log(twitter); // https://twitter.com/hearsparkbox
