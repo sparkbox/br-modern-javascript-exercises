@@ -1,6 +1,6 @@
 /* Use object destructuring to capture the twitter link of the profile object
  * */
-let profile = {
+var profile = {
   fname: 'Ryan',
   lname: 'Cromwell',
   social: {

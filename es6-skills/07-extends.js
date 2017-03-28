@@ -12,7 +12,7 @@ function Developer(firstname, lastname, preferredLanguage) {
   this.preferredLanguage = preferredLanguage;
 }
 
-let jen = new Developer('Jen', 'Maker', 'Javascript');
+var jen = new Developer('Jen', 'Maker', 'Javascript');
 
 console.log(jen.fname); // 'Jen'
 console.log(jen.preferredLanguage); // 'Javascript'

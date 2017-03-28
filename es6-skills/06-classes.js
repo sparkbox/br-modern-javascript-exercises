@@ -5,8 +5,8 @@ function Person(firstname, lastname) {
   this.lname = lastname;
 }
 
-let john = new Person('John', 'Doe');
-let jack = new Person('Jack', 'Doe');
+var john = new Person('John', 'Doe');
+var jack = new Person('Jack', 'Doe');
 
 console.log(john); // Person { fname: 'John', lname: 'Doe' }
 console.log(john.fname); // John

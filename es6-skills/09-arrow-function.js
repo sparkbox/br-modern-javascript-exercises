@@ -1,6 +1,6 @@
 /* Turn `exampleFunction` into a one line "arrow function".
  * */
-const exampleFunction = function() { 
+var exampleFunction = function() { 
   console.log('🙌');
 }
 
