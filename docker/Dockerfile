@@ -7,10 +7,6 @@ RUN apt-get update && apt-get install -y \
     sudo apt-get install -y nodejs && \
     npm install -g webpack
 
-ADD npm-deps /opt/npm-deps
-
-RUN cd /opt/npm-deps/webpack && npm install && cd /opt/npm-deps/skills && npm install
-
 ADD entrypoint /usr/bin/entrypoint
 
 ENTRYPOINT ["entrypoint"]

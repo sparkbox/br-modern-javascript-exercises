@@ -2,6 +2,21 @@
 
 echo "
 
+##########################################################
+Setting up node environments, this may take a few minutes!
+##########################################################
+
+"
+
+pushd /root/es6-skills
+npm install
+pushd /root/my-first-module
+npm install
+popd
+popd
+
+echo "
+
 ####################################################################################################################################
 You're in a Docker environment!  Type exit to leave (or control-D).  You can also find all the examples at your home directory /root
 ####################################################################################################################################
