@@ -1,0 +1,2 @@
+# The docker environment and scripts create a bunch of temporary files that we don't need
+*

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -e
+set -o pipefail
+
+realpath_portable() {
+  OURPWD=$PWD
+  cd "$(dirname "$1")"
+  LINK=$(readlink "$(basename "$1")")
+  while [ "$LINK" ]; do
+    cd "$(dirname "$LINK")"
+    LINK=$(readlink "$(basename "$1")")
+  done
+  REALPATH="$PWD/$(basename "$1")"
+  cd "$OURPWD"
+  echo "$REALPATH"
+}
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+command -v docker &>/dev/null || {
+    echo "Install docker first:  https://docs.docker.com/engine/installation/"
+    exit 1
+}
+
+mkdir -p ${DIR}/npm-deps/{webpack,skills}
+echo "Copying dependencies..."
+cp "${DIR}/../my-first-module/package.json" ${DIR}/npm-deps/webpack/package.json
+cp "${DIR}/../es6-skills/package.json" ${DIR}/npm-deps/skills/package.json
+
+WORKSPACE=$(realpath_portable "${DIR}/../")
+docker build -t br-modern-javascript-exercises ${DIR}
+echo "${WORKSPACE}:/root"
+
+exec docker run -v"${WORKSPACE}:/root" -it br-modern-javascript-exercises  /bin/bash
